@@ -29,6 +29,8 @@ public class ArticleEndpoint
    {
 	  System.out.println("Created called!");
       em.persist(entity);
+      
+      System.out.println("Will return id = " + entity.getId());
       return Response.created(UriBuilder.fromResource(ArticleEndpoint.class).path(String.valueOf(entity.getId())).build()).build();
    }
 
