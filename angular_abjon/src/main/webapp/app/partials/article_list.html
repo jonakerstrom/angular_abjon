@@ -1,0 +1,28 @@
+ <div>
+  <div>
+   
+    <div>
+      Search:<br> <input ng-model="query">
+      <a href="#/map" class="btn btn-primary">Map</a>
+    </div>
+    <div>  
+   <form ng-submit="addArticle()">
+        <input type="text" ng-model="articleText"  size="30"
+               placeholder="add new article here">
+        <input class="btn btn-primary" type="submit" value="Add">
+      </form>
+    </div>   
+    <div id="navigation">
+ 	  
+      <ul class="articles">
+        <li ng-repeat="article in articles | filter:query | orderBy:orderProp">
+          <a class="btn btn-primary" href="#/edit/{{article.id}}">{{article.id}} {{article.article}}</a>
+          
+        </li>
+      </ul>
+      
+     
+
+    </div>
+  </div>
+</div>
